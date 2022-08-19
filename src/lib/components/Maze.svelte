@@ -1,6 +1,7 @@
 <script lang="ts">
     import Victor from "victor";
     import {onMount} from "svelte";
+    import {agentCount} from "../ts/store";
 
     let time = 0;
     let prevTick;
@@ -220,6 +221,7 @@
                 });
                 let toAdd = totalAgents - agents.length;
                 for(let i = 0; i < toAdd; i++){
+                    agentCount.update(x => x + 1);
                     addAgent();
                 }
             }

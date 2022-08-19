@@ -1,9 +1,11 @@
 <script lang="ts">
-    import Maze from "../Maze.svelte";
+    import Maze from "../components/Maze.svelte";
     import { fade, fly } from 'svelte/transition';
     import { elasticOut } from 'svelte/easing';
     import {onMount} from "svelte";
     import {Link} from "svelte-routing";
+    import {agentCount} from "../ts/store";
+
     let ready = false;
     onMount(() => ready = true);
 
@@ -12,7 +14,9 @@
 <div class="fp-back hidden md:block">
     <Maze></Maze>
 </div>
-
+<div class="absolute bottom-0 right-0 text-xl m-3">
+    {$agentCount}
+</div>
 <div class="min-h-screen min-w-screen flex items-center justify-center flex-col">
     {#if ready}
         <div class="text-7xl md:text-8xl">
