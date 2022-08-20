@@ -5,16 +5,21 @@
     import {onMount} from "svelte";
     import {Link} from "svelte-routing";
     import {agentCount} from "../ts/store";
+    import chroma from "chroma-js";
+    import seedrandom from 'seedrandom';
 
     let ready = false;
     onMount(() => ready = true);
-
+    let color;
+    agentCount.subscribe(num => {
+        color = chroma.hsv(seedrandom(num + "c")() * 360, 0.5, 0.7).hex();
+    })
 </script>
 
 <div class="fp-back hidden md:block">
     <Maze></Maze>
 </div>
-<div class="absolute bottom-0 right-0 text-xl m-3">
+<div class="absolute bottom-0 right-0 text-xl m-3" style="color: {chroma(color).brighten(2).hex()}">
     {$agentCount}
 </div>
 <div class="min-h-screen min-w-screen flex items-center justify-center flex-col">
@@ -27,18 +32,34 @@
                 chen
             </div>
         </div>
-        <div class="flex flex-col md:flex-row text-2xl">
-            <div class="page-link" in:fly={{y: 200, duration: 500, delay: 100}}>
-                <Link to="about">about.</Link>
+        <div class="flex flex-col md:flex-row text-2xl" style="--hover-color: {color}">
+            <div in:fly={{y: 200, duration: 500, delay: 100}}>
+                <Link to="about">
+                    <div class="page-link">
+                        about.
+                    </div>
+                </Link>
             </div>
-            <div class="page-link" in:fly={{y: 200, duration: 500, delay: 150}}>
-                <Link to="projects">projects.</Link>
+            <div in:fly={{y: 200, duration: 500, delay: 150}}>
+                <Link to="projects">
+                    <div class="page-link">
+                        projects.
+                    </div>
+                </Link>
             </div>
-            <div class="page-link" in:fly={{y: 200, duration: 500, delay: 200}}>
-                <Link to="things-i-have-done">stuff i've done.</Link>
+            <div in:fly={{y: 200, duration: 500, delay: 200}}>
+                <Link to="things-i-have-done">
+                    <div class="page-link">
+                        stuff i've done.
+                    </div>
+                </Link>
             </div>
-            <div class="page-link" in:fly={{y: 200, duration: 500, delay: 250}}>
-                <a href="https://github.com/encodeous">github.</a>
+            <div in:fly={{y: 200, duration: 500, delay: 250}}>
+                <a href="https://github.com/encodeous">
+                    <div class="page-link">
+                        github.
+                    </div>
+                </a>
             </div>
         </div>
     {/if}
@@ -55,7 +76,9 @@
         animation: pulse 5s cubic-bezier(0.4, 0, 0.6, 1) infinite;
     }
     .page-link:hover{
-        @apply text-3xl text-opacity-100 bg-black;
+        @apply text-opacity-100;
+        padding: 0.2rem 0.5rem 0.8rem 0.5rem;
+        background: repeating-linear-gradient(45deg, var(--hover-color) 0, var(--hover-color) 5px, #0000 5px, #0000 10px);
     }
     @keyframes pulse {
         0%, 100% {

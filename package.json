@@ -12,6 +12,8 @@
   "devDependencies": {
     "@sveltejs/vite-plugin-svelte": "^1.0.1",
     "@tsconfig/svelte": "^3.0.0",
+    "@types/chroma-js": "^2.1.4",
+    "@types/seedrandom": "^3.0.2",
     "@types/victor": "^1.1.0",
     "autoprefixer": "^10.4.8",
     "postcss": "^8.4.16",
@@ -24,6 +26,8 @@
     "vite": "^3.0.7"
   },
   "dependencies": {
+    "chroma-js": "^2.4.2",
+    "seedrandom": "^3.0.5",
     "svelte-routing": "^1.6.0",
     "svelte-typewriter": "^3.0.4",
     "victor": "^1.1.0"
