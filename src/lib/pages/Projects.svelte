@@ -15,37 +15,37 @@
         <div class="w-full flex flex-col">
             <Delayed timeout="{getDelay()}">
                 <Project name="MissileWarsX">
-                    sdfgasdfs
+
                 </Project>
             </Delayed>
             <Delayed timeout="{getDelay()}">
                 <Project name="musii">
-                    sdfgasdfs
+
                 </Project>
             </Delayed>
             <Delayed timeout="{getDelay()}">
                 <Project name="emojipad">
-                    sdfgasdfs
+
                 </Project>
             </Delayed>
             <Delayed timeout="{getDelay()}">
                 <Project name="Neutrino">
-                    sdfgasdfs
+
                 </Project>
             </Delayed>
             <Delayed timeout="{getDelay()}">
                 <Project name="GitRCFS">
-                    sdfgasdfs
+
                 </Project>
             </Delayed>
             <Delayed timeout="{getDelay()}">
                 <Project name="Horizon">
-                    sdfgasdfs
+
                 </Project>
             </Delayed>
             <Delayed timeout="{getDelay()}">
                 <Project name="wstream">
-                    sdfgasdfs
+
                 </Project>
             </Delayed>
         </div>

@@ -43,7 +43,7 @@
     let traceGrid : Array<Array<boolean>> = [];
     let parent : Array<number>;
     let agents : Array<Victor>;
-    let target : Victor = new Victor(-1, -1);
+    let target : Victor = new Victor(0, 0);
     let rows, cols;
     let tPad = 0, lPad = 0;
     let padding = 2;
@@ -78,6 +78,7 @@
         let h = window.innerHeight;
         rows = Math.floor(h / cellSize);
         cols = Math.floor(w / cellSize);
+        if(rows == 0 || cols == 0) return;
         agents = [];
         parent = [];
         if(rows % 2 == 0) rows--;
@@ -117,7 +118,7 @@
             }
         }
         shuffleArray(edges);
-        let tTime = 0;
+        let tTime = 1;
         let tInterval = 5000 * (1 / edges.length);
         for(let val of edges){
             let p1 = find(val[0]);
@@ -202,8 +203,8 @@
             if(cellData[i][j] > 0){
                 // wall data
                 let maxMs = 5000;
-                let before = time - cellData[i][j];
-                let value = 40 - linClamp(Math.min(maxMs, before), 0, maxMs) * (40 - 30);
+                let before = Math.max(time - cellData[i][j], 0);
+                let value = 37 - linClamp(Math.min(maxMs, Math.pow(before, 1.2) * Math.pow((rows - j) / rows, 2.1)), 0, maxMs) * (40 - 30);
                 ctx.fillStyle = `rgb(${value}, ${value}, ${value})`;
 
             }

@@ -7,20 +7,31 @@
     import {agentCount} from "../ts/store";
     import chroma from "chroma-js";
     import seedrandom from 'seedrandom';
+    import {userAgent} from '../ts/user-agent.js'
 
     let ready = false;
-    onMount(() => ready = true);
+    onMount(() => {
+        ready = true;
+        if (userAgent.isIos()) {
+            document.querySelector('#maze').classList.add('is-ios');
+        }
+    });
     let color;
     agentCount.subscribe(num => {
         color = chroma.hsv(seedrandom(num + "c")() * 360, 0.5, 0.7).hex();
     })
 </script>
 
-<div class="fp-back hidden md:block">
+<div id="maze" class="fp-back hidden md:block">
     <Maze></Maze>
 </div>
-<div class="absolute bottom-0 right-0 text-xl m-3" style="color: {chroma(color).brighten(2).hex()}">
+<div class="absolute bottom-0 right-0 text-xl m-3 hidden md:block flex flex-col" style="color: {chroma(color).brighten(2).hex()}">
     {$agentCount}
+    <div class="text-white inline-block text-xs">
+        {#if (userAgent.isIos() || userAgent.isOldIos() || userAgent.isIosSafari() || userAgent.isIpados())}
+            | it looks like you're on ios... the maze won't work properly. :(
+        {/if}
+    </div>
 </div>
 <div class="min-h-screen min-w-screen flex items-center justify-center flex-col">
     {#if ready}
@@ -68,8 +79,10 @@
 <style>
     .fp-back {
         position: absolute;
-        pointer-events: none;
         z-index: -1;
+    }
+    .is-ios * {
+        cursor: pointer;
     }
     .page-link{
         @apply p-2 duration-200 ease-in-out font-black cursor-pointer;

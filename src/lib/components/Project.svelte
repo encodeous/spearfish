@@ -8,7 +8,7 @@
     export let repoUrl = "";
     export let demoUrl = "";
     function getColor(){
-        return chroma.hsv(nameCode, 0.6, 0.6).hex();
+        return chroma.hsv(nameCode, 0.6, 0.4).hex();
     }
     let color = getColor();
 </script>

@@ -22,7 +22,7 @@
     <div class="bg-black fira flex flex-row">
         <Link to="/" class="hover:bg-gray-700 p-2 duration-150">
             <Typewriter mode="scramble" scrambleDuration="400">
-                🢤 return home.
+                &lt; return home.
             </Typewriter>
         </Link>
         <div class="flex-grow"></div>
