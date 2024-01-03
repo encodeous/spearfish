@@ -5,7 +5,7 @@
     import { Router, Link, Route } from "svelte-routing";
     import { fly } from 'svelte/transition';
     import About from "./lib/pages/About.svelte";
-    import Projects from "./lib/pages/Projects.svelte";
+    import Portfolio from "./lib/pages/Portfolio.svelte";
     export let url = "";
 </script>
 
@@ -22,7 +22,7 @@
     </Route>
     <Route path="projects" >
         <div in:fly={{y: -20, duration: 100}} class="route-path">
-            <Projects/>
+            <Portfolio/>
         </div>
     </Route>
 <!--    <Route path="/about"></Route>-->

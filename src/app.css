@@ -1,13 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;500;700&family=Raleway:wght@100;300;500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=BioRhyme&family=Cormorant+Garamond&family=Monoton&family=Proza+Libre&family=VT323&display=swap');
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 :root {
   font-family: 'Raleway', sans-serif;
-  font-size: 16px;
-  line-height: 24px;
-  font-weight: 100;
+  /*font-family: 'Proza Libre', sans-serif;*/
 
   color-scheme: light dark;
   color: rgba(255, 255, 255, 0.87);
@@ -22,4 +21,44 @@
 
 .fira{
   font-family: 'Fira Code', serif;
+}
+
+.f-mono-1{
+  font-family: 'VT323', monospace;
+}
+
+.f-mono-2{
+  font-family: 'Fira Code', serif;
+}
+
+.f-title-1{
+  font-family: 'Monoton', cursive;
+}
+
+.f-title-2{
+  font-family: 'BioRhyme', serif;
+}
+
+.f-body-2{
+  font-family: 'Cormorant Garamond', serif;
+}
+
+.f-body-1{
+  font-family: 'Proza Libre', sans-serif;
+}
+
+.sel-light{
+  background: repeating-linear-gradient(45deg, lightskyblue 0, lightskyblue 5px, #0000 5px, #0000 10px);
+}
+
+.mocha{
+  font-weight: 300;
+  color: #86EFACFF;
+  white-space: nowrap;
+}
+
+.tangerine{
+  font-weight: 300;
+  color: #fd9b2c;
+  white-space: nowrap;
 }

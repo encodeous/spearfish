@@ -54,7 +54,7 @@
             <div in:fly={{y: 200, duration: 500, delay: 150}}>
                 <Link to="projects">
                     <div class="page-link">
-                        projects.
+                        portfolio.
                     </div>
                 </Link>
             </div>
