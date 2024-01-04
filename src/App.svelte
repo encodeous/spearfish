@@ -6,7 +6,9 @@
     import { fly } from 'svelte/transition';
     import About from "./lib/pages/About.svelte";
     import Portfolio from "./lib/pages/Portfolio.svelte";
+    import {loadData} from "./lib/ts/api";
     export let url = "";
+    loadData()
 </script>
 
 <Router url="{url}">
@@ -20,7 +22,12 @@
             <About/>
         </div>
     </Route>
-    <Route path="projects" >
+    <Route path="portfolio/:tag" let:params>
+        <div in:fly={{y: -20, duration: 100}} class="route-path">
+            <Portfolio tag="{params.tag}"/>
+        </div>
+    </Route>
+    <Route path="portfolio">
         <div in:fly={{y: -20, duration: 100}} class="route-path">
             <Portfolio/>
         </div>

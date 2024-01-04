@@ -62,3 +62,7 @@
   color: #fd9b2c;
   white-space: nowrap;
 }
+
+hr{
+  border-top: 1px solid #484848;
+}
