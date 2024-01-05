@@ -8,14 +8,10 @@
     import { get } from 'svelte/store';
     import {Link} from "svelte-routing";
     export let tag = "";
-    let count = 0;
-    function getDelay(){
-        return count += 300;
-    }
 </script>
 
 <Page pagePath="home/portfolio">
-    <div class="h-100 p-5 md:w-3/4 mx-auto">
+    <div class="h-100 p-5 md:w-4/5 mx-auto">
         {#if tag !== ""}
             <div class="info relative">
                 <div class="p-2 flex flex-row">
@@ -33,11 +29,9 @@
         <div class="w-full justify-center project-grid grid justify-items-center gap-x-5">
             {#each $portfolio as item}
                 {#if tag === "" || item.tags.includes(tag)}
-                    <Delayed timeout="{getDelay()}">
-                        <Project {...item}>
-                            {@html item.content}
-                        </Project>
-                    </Delayed>
+                    <Project {...item}>
+                        {@html item.content}
+                    </Project>
                 {/if}
             {/each}
         </div>

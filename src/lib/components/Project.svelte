@@ -9,6 +9,7 @@
     export let repoUrl = null;
     export let demoUrl = null;
     export let packageUrl = null;
+    export let links = [];
     export let tags : string[] = []
     function getColor(v){
         return chroma.hsv(nameCode, 0.6, v).hex();
@@ -51,25 +52,13 @@
             <slot/>
         </div>
         <hr>
-        <div class="pt-2">
-            {#if repoUrl}
-                <a class="action-button transition p-1 rounded-sm m-1" target="_blank" href={repoUrl}>
-                    <i class="fa-solid fa-code px-1"></i>
-                    Source Code
+        <div class="pt-2 flex flex-row-reverse">
+            {#each links as link}
+                <a class="action-button transition p-1 rounded-sm m-1" target="_blank" href={link.link}>
+                    <i class="fa-solid {link.icon} px-1"></i>
+                    {link.name}
                 </a>
-            {/if}
-            {#if demoUrl}
-                <a class="action-button transition p-1 rounded-sm m-1" target="_blank" href={demoUrl}>
-                    <i class="fa-solid fa-rocket px-1"></i>
-                    Live Demo
-                </a>
-            {/if}
-            {#if packageUrl}
-                <a class="action-button transition p-1 rounded-sm m-1" target="_blank" href={packageUrl}>
-                    <i class="fa-solid fa-box px-1"></i>
-                    Install Package
-                </a>
-            {/if}
+            {/each}
         </div>
     </div>
 </div>
