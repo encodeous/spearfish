@@ -37,10 +37,10 @@
     {#if ready}
         <div class="text-7xl md:text-8xl">
             <div class="md:inline-block" in:fade>
-                adam
+                Adam
             </div>
             <div class="md:inline-block" in:fly={{x: 50, duration: 2000, easing: elasticOut, delay: 1000}}>
-                chen
+                Chen
             </div>
         </div>
         <div class="flex flex-col md:flex-row text-2xl" style="--hover-color: {color}">
@@ -58,13 +58,13 @@
                     </div>
                 </Link>
             </div>
-            <div in:fly={{y: 200, duration: 500, delay: 200}}>
-                <Link to="things-i-have-done">
-                    <div class="page-link">
-                        stuff i've done.
-                    </div>
-                </Link>
-            </div>
+<!--            <div in:fly={{y: 200, duration: 500, delay: 200}}>-->
+<!--                <Link to="things-i-have-done">-->
+<!--                    <div class="page-link">-->
+<!--                        stuff i've done.-->
+<!--                    </div>-->
+<!--                </Link>-->
+<!--            </div>-->
             <div in:fly={{y: 200, duration: 500, delay: 250}}>
                 <a href="https://github.com/encodeous">
                     <div class="page-link">
