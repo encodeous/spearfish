@@ -58,13 +58,13 @@
                     </div>
                 </Link>
             </div>
-<!--            <div in:fly={{y: 200, duration: 500, delay: 200}}>-->
-<!--                <Link to="things-i-have-done">-->
-<!--                    <div class="page-link">-->
-<!--                        stuff i've done.-->
-<!--                    </div>-->
-<!--                </Link>-->
-<!--            </div>-->
+            <div in:fly={{y: 200, duration: 500, delay: 200}}>
+                <Link to="blog">
+                    <div class="page-link">
+                        blog.
+                    </div>
+                </Link>
+            </div>
             <div in:fly={{y: 200, duration: 500, delay: 250}}>
                 <a href="https://github.com/encodeous">
                     <div class="page-link">

@@ -1,0 +1,17 @@
+h1{
+    font-size: 30pt;
+}
+
+h2{
+    font-size: 20pt;
+}
+
+#blog-content a{
+    font-weight: 300;
+    color: #fd9b2c;
+    white-space: nowrap;
+}
+
+#blog-content p{
+    margin-top: 15px;
+}

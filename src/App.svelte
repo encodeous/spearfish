@@ -7,6 +7,7 @@
     import About from "./lib/pages/About.svelte";
     import Portfolio from "./lib/pages/Portfolio.svelte";
     import {loadData} from "./lib/ts/api";
+    import Blog from "./lib/pages/Blog.svelte";
     export let url = "";
     loadData()
 </script>
@@ -30,6 +31,16 @@
     <Route path="portfolio">
         <div in:fly={{y: -20, duration: 100}} class="route-path">
             <Portfolio/>
+        </div>
+    </Route>
+    <Route path="blog/:page" let:params>
+        <div in:fly={{y: -20, duration: 100}} class="route-path">
+            <Blog page="{params.page}"/>
+        </div>
+    </Route>
+    <Route path="blog">
+        <div in:fly={{y: -20, duration: 100}} class="route-path">
+            <Blog/>
         </div>
     </Route>
 <!--    <Route path="/about"></Route>-->
